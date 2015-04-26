@@ -1,0 +1,152 @@
+View Engines
+
+What is View Engines?
+Why view Engines?
+Various Type of View Engines
+- Razor (Microsoft)
+- Traditional ASPX
+- Spark
+- NHaml
+Choice of View Engines
+How may view Engines can be use in a solution
+
+How to make a view Engine
+
+Links
+
+- 
+http://channel9.msdn.com/coding4fun/articles/Developer-Review-Four-ASPNET-MVC-View-Engines
+
+
+Main responsiblity of View Engines is to Create/render the HTML from view(page/form) to the web browser, View Engines have its own set of syntax and controles
+
+
+The choice of view engine is important, because the feature sets of view engines are quite different. Some support rendering to PDF files, for instance; some can't be used outside a web context (this is true for the old ASP.NET view engine), while others can (e.g. Razor). 'Offline' rendering of views comes in handy when you want to create HTML emails the same way you build your views and those emails should be sent from a background worker rather than a web application.
+
+Comparison
+http://stackoverflow.com/questions/1451319/asp-net-mvc-view-engine-comparison
+
+
+The good news is that you can use multiple view engines in parallel in ASP.NET MVC, though I wouldn't recommend it unless necessary.
+
+There are some very nice extension points in the Razor engine already. For example, you can provide a custom view base class, a powerful concept that makes it easy to add a lot of functionality in the right place without having to mess with all the gritty details that you'd have to cope with otherwise.
+
+-
+
+In ASP.Net MVC, View engine is the one that works between your view and browser to provide valid HTML output to your browser by considering output provided by your view.There are many types of view engines.
+
+1)ASPX
+
+2)Razor
+
+3)Spark
+
+4)NHaml
+
+5)NDJango
+
+6)Hasic
+
+7)Brail
+
+Currently most developers prefer to use Razor view engine as it provides very convenient way of programming rather than ASPX.All of these view engines may not support MVC.
+
+
+
+
+View Engine works inside the application for rendering HTML page to the browser or to the user. It can contain HTML tags, server controls and some programming language.
+
+Razor is preferred view engine for MVC4 framework.
+
+
+
+-------------------------
+-----------
+The view engine is responsible for creating HTML from your views. Views are usually some kind of mixup of HTML and a programming language. The pattern behind most of these is called two-step view.
+
+For example, ASP.NET comes with its own view engine out of the box. That is the one where views have lots of tags like <% %> and <%: %>. It uses the .aspx file extension.
+
+With ASP.NET MVC3, another out-of-the-box view engine was added, Razor, which has a more appealing syntax, e.g. <div>@Model.UserName</div>.
+
+The choice of view engine is important, because the feature sets of view engines are quite different. Some support rendering to PDF files, for instance; some can't be used outside a web context (this is true for the old ASP.NET view engine), while others can (e.g. Razor). 'Offline' rendering of views comes in handy when you want to create HTML emails the same way you build your views and those emails should be sent from a background worker rather than a web application.
+
+There's a nice comparison of asp.net view engines here on SO.
+
+The good news is that you can use multiple view engines in parallel in ASP.NET MVC, though I wouldn't recommend it unless necessary.
+
+There are some very nice extension points in the Razor engine already. For example, you can provide a custom view base class, a powerful concept that makes it easy to add a lot of functionality in the right place without having to mess with all the gritty details that you'd have to cope with otherwise.
+
+I'd currently go for Razor.
+
+
+-------------------
+
+
+
+The view engine is what's responsible for rendering your view, and converting your code into glorious HTML. As such, they are directly responsible for HOW you need to write code in your views.
+
+There's basically two ones you need to care about: ASPX and Razor. Razor is, in my opinion, much sleeker and easier to use, at the cost of only being supported in MVC3.
+
+For example, a code block in ASPX might look like this:
+
+<% foreach(var item in Model) { %>
+    <tr>
+        <td><%: item.Name %></td>
+    </tr>
+<% } %>
+
+Whereas the Razor equivalent will look like this:
+
+@foreach(var item in Model) {
+    <tr>
+        <td>@item.Name</td>
+    </tr>
+}
+
+
+
+
+----------------------------------
+
+Viewengin is the combination of HTML tags, Server Controls and a programming language and works inside the application for rendering view to the browser or to the user. So the main responsiblity of View Engines is to create/render code into glorious HTML to the web browser, Every View Engines have its own set of syntax and controles.
+
+There are number of view engines are avilable list give below and the choice of view engine is important, because the feature sets of view engines are quite different. Some support rendering to PDF files, for instance; Some can't be used outside a web context (this is true for the old ASP.NET view engine), while others can (e.g. Razor). 'Offline' rendering of views comes in handy when you want to create HTML emails the same way you build your views and those emails should be sent from a background worker rather than a web application. Now a days we can use multiple view engines in parallel in ASP.NET MVC, though it wouldn't recommend unless is requires.
+
+Below is the list of some commoun view engines.
+
+1)ASPX
+
+2)Razor
+
+3)Spark
+
+4)NHaml
+
+5)NDJango
+
+6)Hasic
+
+7)Brail
+
+Currently most developers prefer to use Razor(Microsoft) view engine for MVC4 framework. as it provides very convenient way of programming rather than ASPX. All of these view engines may not support MVC.
+
+Lets take an systex example of most common view engines: ASPX and Razor. Razor is, in my opinion, much sleeker and easier to use, at the cost of only being supported in MVC.
+
+A code block in ASPX might look like this:
+
+<% foreach(var item in Model) { %>
+    <tr>
+        <td><%: item.Name %></td>
+    </tr>
+<% } %>
+
+Whereas the Razor equivalent will look like this:
+
+@foreach(var item in Model) {
+    <tr>
+        <td>@item.Name</td>
+    </tr>
+}
+
+
+
